@@ -2,6 +2,8 @@ package com.example.recipes;
 
 
 import android.content.Context;
+import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -26,8 +28,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @NonNull
     @Override
-    public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public MyHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view;
+        LayoutInflater mInflater = LayoutInflater.from(mContext);
+        view = mInflater.inflate(R.layout.cardview_recipe,viewGroup,false);
+        return new MyHolder(view);
     }
 
     @Override
