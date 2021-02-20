@@ -2,6 +2,7 @@ package com.example.recipes;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,13 +37,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyHolder myHolder, final int i) {
+        myHolder.recipeTitle.setText(mData.get(i).getRecipeName());
+        myHolder.img_recipe_thumbnail.setImageResource(mData.get(i).getThumbnail());
+        myHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext,RecipeActivity.class);
+                intent.putExtra("name", mData.get(i).getRecipeName());
+                intent.putExtra("Ingredient", mData.get(i).getRecipeIngredient());
+                intent.putExtra("MethodTitle", mData.get(i).getRecipeMethodTitle());
+                intent.putExtra("Recipe", mData.get(i).getRecipe());
+
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mData.size();
     }
 
     public class MyHolder extends RecyclerView.ViewHolder {
