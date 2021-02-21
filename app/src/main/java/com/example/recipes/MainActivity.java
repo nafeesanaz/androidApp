@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class MainActivity<myAdapter, myRecyclerView> extends AppCompatActivity {
+public abstract class MainActivity extends AppCompatActivity {
 
     RecyclerView myRecyclerView;
     RecyclerViewAdapter myAdapter;
@@ -41,7 +41,7 @@ public abstract class MainActivity<myAdapter, myRecyclerView> extends AppCompatA
                 "Per Serving: 216 calories; protein 7.4g; carbohydrates 25.5g; fat 9.2g; cholesterol 110.7mg; sodium 235.3mg.\n", R.drawable.crepe ) );
 
 
-        myRecyclerView = (RecyclerView)findViewById( R.id.recyclerView_id);
+        myRecyclerView = findViewById( R.id.recyclerView_id);
         myAdapter = new RecyclerViewAdapter( this , recipes1);
         myRecyclerView.setLayoutManager(new GridLayoutManager( this, 1));
         myRecyclerView.setAdapter(myAdapter);

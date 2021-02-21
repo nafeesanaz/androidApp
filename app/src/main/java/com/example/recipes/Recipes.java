@@ -1,11 +1,11 @@
 package com.example.recipes;
 
 public class Recipes {
-    private String RecipeName;
-    private String RecipeIngredient;
-    private String RecipeMethodTitle;
-    private String Recipe;
-    private int Thumbnail;
+    private final String RecipeName;
+    private final String RecipeIngredient;
+    private final String RecipeMethodTitle;
+    private final String Recipe;
+    private final int Thumbnail;
 
     public Recipes(String name, String recipeIngredient,String recipeMethodTitle, String recipe, int thumbnail)
     {
