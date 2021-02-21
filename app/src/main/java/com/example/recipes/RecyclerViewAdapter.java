@@ -3,7 +3,6 @@ package com.example.recipes;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import java.util.List;
 
@@ -70,7 +67,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
 
             recipeTitle = (TextView)itemView.findViewById(R.id.text_recipes);
-            img_recipe_thumbnail = (ImageView).ItemView.findViewById(R.id.recipes_img_id);
+            img_recipe_thumbnail = (ImageView)itemView.findViewById(R.id.recipes_img_id);
             cardView = (CardView) itemView.findViewById(R.id.cardview_id);
 
         }
